@@ -4,7 +4,7 @@ export default class Text extends Component {
   constructor(props) {
     super();
     this.state = {
-      intro: props.text,
+      text: props.text,
       editing: false
     }
   }
@@ -13,17 +13,17 @@ export default class Text extends Component {
     this.setState({ editing: true });
   }
 
-  exitEditMode() {
+  save() {
     this.setState({ editing: false });
   }
 
   handleChange(e) {
-    this.setState({intro: e.target.value});
+    this.setState({text: e.target.value});
   }
 
   renderDisplay() {
     return (
-      <span onClick={this.setEditMode.bind(this)}>{this.state.intro}</span>
+      <span onClick={this.setEditMode.bind(this)}>{this.state.text}</span>
     );
   }
 
@@ -32,8 +32,8 @@ export default class Text extends Component {
       <div>
         <textarea
           onChange={this.handleChange.bind(this)}
-          value={this.state.intro}></textarea>
-        <button className={this.state.inputClass} onClick={this.exitEditMode.bind(this)}>Done</button>
+          value={this.state.text}></textarea>
+        <button onClick={this.save.bind(this)}>Done</button>
       </div>
     );
   }
