@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
-import Title from "./Title"
-import Intro from "./Intro"
+import Text from "./Text"
 import Articles from "./Articles"
-import NextWeek from "./NextWeek"
 
 export default class Layout extends Component {
   render() {
     return (
       <div>
-        <Title />
-        <Intro />
+        <h2><Text text="Title - click to edit" /></h2>
+        <p><Text text="Intro text - click to edit" /></p>
         <Articles />
-        <NextWeek />
+        <p><Text text="Next week - click to edit" /></p>
       </div>
     );
   };

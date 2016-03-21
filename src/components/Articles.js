@@ -8,7 +8,7 @@ export default class Articles extends Component {
         <div class="media-item update">
           <div class="image">How to image?</div>
           <div class="content">
-            <h2>Title Example</h2>
+            <h3>Title Example</h3>
             <h5>Area (optional)</h5>
             <p>A description of the thing.</p>
           </div>
