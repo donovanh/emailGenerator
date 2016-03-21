@@ -1,18 +1,37 @@
 import React, { Component } from 'react';
+import Article from "./Article"
 
 export default class Articles extends Component {
+  constructor(props) {
+    super();
+    this.state = {
+      articles: [
+        {
+          title: 'Example article title',
+          area: 'Project name',
+          description: 'Description text'
+        },
+        {
+          title: 'Example article title',
+          area: 'Project name',
+          description: 'Description text'
+        }
+      ]
+    }
+  }
   render() {
     return (
       <div>
         <h2>This week</h2>
-        <div class="media-item update">
-          <div class="image">How to image?</div>
-          <div class="content">
-            <h3>Title Example</h3>
-            <h5>Area (optional)</h5>
-            <p>A description of the thing.</p>
-          </div>
-        </div>
+        {this.state.articles.map(function(article, i) {
+          return (
+              <Article
+                title={article.title}
+                area={article.area}
+                description={article.description}
+              />
+            );
+        })}
       </div>
     );
   };

@@ -23,9 +23,7 @@ export default class Text extends Component {
 
   renderDisplay() {
     return (
-      <span className={this.state.pClass}
-          onClick={this.setEditMode.bind(this)}
-        >{this.state.intro}</span>
+      <span onClick={this.setEditMode.bind(this)}>{this.state.intro}</span>
     );
   }
 
@@ -33,7 +31,6 @@ export default class Text extends Component {
     return (
       <div>
         <textarea
-          className={this.state.inputClass}
           onChange={this.handleChange.bind(this)}
           value={this.state.intro}></textarea>
         <button className={this.state.inputClass} onClick={this.exitEditMode.bind(this)}>Done</button>
